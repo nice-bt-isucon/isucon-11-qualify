@@ -208,6 +208,18 @@ func init() {
 }
 
 func main() {
+	// ログを書き込むファイルを開く（なければ作成）
+	file, err := os.OpenFile("testlogfile.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		// エラーハンドリング
+		log.Fatal(err)
+	}
+
+	// 関数が終了する際にファイルを閉じる
+	defer file.Close()
+
+	// ログの出力先をファイルに設定
+	log.SetOutput(file)
 	e := echo.New()
 	e.Debug = true
 	e.Logger.SetLevel(log.DEBUG)
@@ -239,7 +251,6 @@ func main() {
 
 	mySQLConnectionData = NewMySQLConnectionEnv()
 
-	var err error
 	db, err = mySQLConnectionData.ConnectDB()
 	if err != nil {
 		e.Logger.Fatalf("failed to connect db: %v", err)
