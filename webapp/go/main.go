@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"math/rand"
+	"net"
 	"net/http"
 	"os"
 	"os/exec"
@@ -40,6 +41,7 @@ const (
 	scoreConditionLevelInfo     = 3
 	scoreConditionLevelWarning  = 2
 	scoreConditionLevelCritical = 1
+	unixSocketPath              = "/tmp/application.sock"
 )
 
 var (
@@ -253,8 +255,25 @@ func main() {
 		return
 	}
 
-	serverPort := fmt.Sprintf(":%v", getEnv("SERVER_APP_PORT", "3000"))
-	e.Logger.Fatal(e.Start(serverPort))
+	// Unixソケットのファイルが既に存在する場合は削除
+	if err := os.Remove(unixSocketPath); err != nil && !os.IsNotExist(err) {
+		e.Logger.Fatal(err)
+	}
+
+	// Unixソケットでリッスン
+	listener, err := net.Listen("unix", unixSocketPath)
+	if err != nil {
+		e.Logger.Fatal(err)
+	}
+	defer listener.Close()
+
+	// ソケットファイルのパーミッション設定
+	if err := os.Chmod(unixSocketPath, 0666); err != nil {
+		e.Logger.Fatal(err)
+	}
+
+	// サーバー起動
+	e.Logger.Fatal(e.Server.Serve(listener))
 }
 
 func getSession(r *http.Request) (*sessions.Session, error) {
@@ -937,7 +956,7 @@ func calculateGraphDataPoint(isuConditions []IsuCondition) (GraphDataPoint, erro
 }
 
 // GET /api/condition/:jia_isu_uuid
-// ISUのコンディションを取得
+// ISUのコンディションを取��
 func getIsuConditions(c echo.Context) error {
 	jiaUserID, errStatusCode, err := getUserIDFromSession(c)
 	if err != nil {
