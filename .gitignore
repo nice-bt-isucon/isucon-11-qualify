@@ -1,0 +1,15 @@
+.cache
+local
+.cargo
+.rustup
+.ansible
+.bundle
+.local
+.config
+.perl-cpm
+slow-query_logs
+go
+.ssh
+.git
+.cpanm
+.npm
