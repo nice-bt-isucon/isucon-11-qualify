@@ -8,7 +8,6 @@ local
 .config
 .perl-cpm
 slow-query_logs
-go
 .ssh
 .git
 .cpanm
