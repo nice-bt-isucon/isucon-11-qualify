@@ -207,22 +207,20 @@ func init() {
 }
 
 func main() {
-	// ログはデバッグする時だけ！
-	// // ログを書き込むファイルを開く（なければ作成）
-	// file, err := os.OpenFile("testlogfile.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	// if err != nil {
-	// 	// エラーハンドリング
-	// 	log.Fatal(err)
-	// }
+	// ログを書き込むファイルを開く（なければ作成）
+	file, err := os.OpenFile("testlogfile.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		// エラーハンドリング
+		log.Fatal(err)
+	}
 
-	// // 関数が終了する際にファイルを閉じる
-	// defer file.Close()
+	// 関数が終了する際にファイルを閉じる
+	defer file.Close()
 
 	// ログの出力先をファイルに設定
-	// log.SetOutput(file)
+	log.SetOutput(file)
 	e := echo.New()
-	// ベンチ回す時はデバッグモードをtrueにする
-	e.Debug = false
+	e.Debug = true
 	e.Logger.SetLevel(log.DEBUG)
 
 	e.Use(middleware.Logger())
@@ -252,7 +250,7 @@ func main() {
 
 	mySQLConnectionData = NewMySQLConnectionEnv()
 
-	db, err := mySQLConnectionData.ConnectDB()
+	db, err = mySQLConnectionData.ConnectDB()
 	if err != nil {
 		e.Logger.Fatalf("failed to connect db: %v", err)
 		return
