@@ -12,7 +12,7 @@
 ~h
 # Command Line History (newest to oldest):
 :wq
-|2,0,1731827511,,"wq"
+|2,0,1731831344,,"wq"
 
 # Search String History (newest to oldest):
 
@@ -24,46 +24,69 @@
 
 # Registers:
 ""1	LINE	0
-	cd /
-|3,1,1,1,1,0,1731827493,"cd /"
+	INDEX `idx_jia_isu_uuid_timestamp` (`jia_isu_uuid`, `timestamp` DESC)
+|3,1,1,1,1,0,1731831318,"INDEX `idx_jia_isu_uuid_timestamp` (`jia_isu_uuid`, `timestamp` DESC)"
 "2	LINE	0
-	cd wwwdirname $0)/../
-|3,0,2,1,1,0,1731827483,"cd wwwdirname $0)/../"
+	cd /
+|3,0,2,1,1,0,1731827493,"cd /"
 "3	LINE	0
-	
-|3,0,3,1,1,0,1731827468,""
+	cd wwwdirname $0)/../
+|3,0,3,1,1,0,1731827483,"cd wwwdirname $0)/../"
 "4	LINE	0
+	
+|3,0,4,1,1,0,1731827468,""
+"5	LINE	0
 	DIR="slow-query_logs"
-|3,0,4,1,1,0,1731827467,"DIR=\"slow-query_logs\""
+|3,0,5,1,1,0,1731827467,"DIR=\"slow-query_logs\""
 "-	CHAR	0
 	$(
 |3,0,36,0,1,0,1731827481,"$("
 
 # File marks:
-'0  13  0  /usr/bin/rotate-slow-query-log
-|4,48,13,0,1731827511,"/usr/bin/rotate-slow-query-log"
-'1  7  0  /usr/bin/rotate-slow-query-log
-|4,49,7,0,1731827431,"/usr/bin/rotate-slow-query-log"
-'2  5  0  /usr/bin/rotate-slow-query-log
-|4,50,5,0,1731827431,"/usr/bin/rotate-slow-query-log"
-'3  4  0  ~/.ssh/authorized_keys
-|4,51,4,0,1731826112,"~/.ssh/authorized_keys"
+'0  26  19  ~/webapp/sql/0_Schema.sql
+|4,48,26,19,1731831344,"~/webapp/sql/0_Schema.sql"
+'1  13  0  /usr/bin/rotate-slow-query-log
+|4,49,13,0,1731827511,"/usr/bin/rotate-slow-query-log"
+'2  7  0  /usr/bin/rotate-slow-query-log
+|4,50,7,0,1731827431,"/usr/bin/rotate-slow-query-log"
+'3  5  0  /usr/bin/rotate-slow-query-log
+|4,51,5,0,1731827431,"/usr/bin/rotate-slow-query-log"
+'4  4  0  ~/.ssh/authorized_keys
+|4,52,4,0,1731826112,"~/.ssh/authorized_keys"
 
 # Jumplist (newest first):
+-'  26  19  ~/webapp/sql/0_Schema.sql
+|4,39,26,19,1731831344,"~/webapp/sql/0_Schema.sql"
+-'  1  0  ~/webapp/sql/0_Schema.sql
+|4,39,1,0,1731831266,"~/webapp/sql/0_Schema.sql"
+-'  13  0  /usr/bin/rotate-slow-query-log
+|4,39,13,0,1731827511,"/usr/bin/rotate-slow-query-log"
 -'  13  0  /usr/bin/rotate-slow-query-log
 |4,39,13,0,1731827511,"/usr/bin/rotate-slow-query-log"
 -'  6  0  /usr/bin/rotate-slow-query-log
 |4,39,6,0,1731827472,"/usr/bin/rotate-slow-query-log"
 -'  4  0  /usr/bin/rotate-slow-query-log
 |4,39,4,0,1731827472,"/usr/bin/rotate-slow-query-log"
+-'  6  0  /usr/bin/rotate-slow-query-log
+|4,39,6,0,1731827472,"/usr/bin/rotate-slow-query-log"
+-'  4  0  /usr/bin/rotate-slow-query-log
+|4,39,4,0,1731827472,"/usr/bin/rotate-slow-query-log"
 -'  7  0  /usr/bin/rotate-slow-query-log
 |4,39,7,0,1731827464,"/usr/bin/rotate-slow-query-log"
+-'  7  0  /usr/bin/rotate-slow-query-log
+|4,39,7,0,1731827464,"/usr/bin/rotate-slow-query-log"
+-'  5  0  /usr/bin/rotate-slow-query-log
+|4,39,5,0,1731827431,"/usr/bin/rotate-slow-query-log"
 -'  5  0  /usr/bin/rotate-slow-query-log
 |4,39,5,0,1731827431,"/usr/bin/rotate-slow-query-log"
 -'  1  0  /usr/bin/rotate-slow-query-log
 |4,39,1,0,1731827393,"/usr/bin/rotate-slow-query-log"
 -'  1  0  /usr/bin/rotate-slow-query-log
 |4,39,1,0,1731827393,"/usr/bin/rotate-slow-query-log"
+-'  1  0  /usr/bin/rotate-slow-query-log
+|4,39,1,0,1731827393,"/usr/bin/rotate-slow-query-log"
+-'  1  0  /usr/bin/rotate-slow-query-log
+|4,39,1,0,1731827393,"/usr/bin/rotate-slow-query-log"
 -'  4  0  ~/.ssh/authorized_keys
 |4,39,4,0,1731826112,"~/.ssh/authorized_keys"
 -'  4  0  ~/.ssh/authorized_keys
@@ -72,6 +95,22 @@
 |4,39,4,0,1731826112,"~/.ssh/authorized_keys"
 -'  4  0  ~/.ssh/authorized_keys
 |4,39,4,0,1731826112,"~/.ssh/authorized_keys"
+-'  4  0  ~/.ssh/authorized_keys
+|4,39,4,0,1731826112,"~/.ssh/authorized_keys"
+-'  4  0  ~/.ssh/authorized_keys
+|4,39,4,0,1731826112,"~/.ssh/authorized_keys"
+-'  4  0  ~/.ssh/authorized_keys
+|4,39,4,0,1731826112,"~/.ssh/authorized_keys"
+-'  4  0  ~/.ssh/authorized_keys
+|4,39,4,0,1731826112,"~/.ssh/authorized_keys"
+-'  1  0  ~/.ssh/authorized_keys
+|4,39,1,0,1731826094,"~/.ssh/authorized_keys"
+-'  1  0  ~/.ssh/authorized_keys
+|4,39,1,0,1731826094,"~/.ssh/authorized_keys"
+-'  1  0  ~/.ssh/authorized_keys
+|4,39,1,0,1731826094,"~/.ssh/authorized_keys"
+-'  1  0  ~/.ssh/authorized_keys
+|4,39,1,0,1731826094,"~/.ssh/authorized_keys"
 -'  1  0  ~/.ssh/authorized_keys
 |4,39,1,0,1731826094,"~/.ssh/authorized_keys"
 -'  1  0  ~/.ssh/authorized_keys
@@ -82,6 +121,15 @@
 |4,39,1,0,1731826094,"~/.ssh/authorized_keys"
 
 # History of marks within files (newest to oldest):
+
+> ~/webapp/sql/0_Schema.sql
+	*	1731831328	0
+	"	26	19
+	^	26	20
+	.	26	19
+	+	26	19
+	+	27	68
+	+	26	19
 
 > /usr/bin/rotate-slow-query-log
 	*	1731827509	0
