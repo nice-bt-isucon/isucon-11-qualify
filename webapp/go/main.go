@@ -8,7 +8,7 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
-	"math/rand/v2"
+	"math/rand"
 	"net/http"
 	"os"
 	"os/exec"
