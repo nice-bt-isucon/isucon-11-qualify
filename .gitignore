@@ -12,3 +12,6 @@ slow-query_logs
 .git
 .cpanm
 .npm
+*.zip
+.bash_history
+.wget-hsts
